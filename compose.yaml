@@ -12,6 +12,9 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: secret
       MYSQL_DB: todos
+    depends_on:
+      mysql:
+        condition: service_started
   mysql:
     image: mysql:8.0
     volumes:
